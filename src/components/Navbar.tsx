@@ -51,6 +51,15 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href="/Kinza Khan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Kinza Khan CV.pdf"
+              className="px-5 py-2.5 text-sm font-semibold text-text-muted hover:text-accent rounded-full border border-border hover:border-accent transition-all duration-200"
+            >
+              Resume
+            </a>
+            <a
               href="#contact"
               className="px-5 py-2.5 text-sm font-semibold text-white rounded-full btn-accent hover:shadow-soft transition-all duration-200"
             >
@@ -87,6 +96,16 @@ export default function Navbar() {
                     {link.name}
                   </a>
                 ))}
+                <a
+                  href="/Kinza Khan.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download="Kinza Khan CV.pdf"
+                  onClick={() => setMobileOpen(false)}
+                  className="px-5 py-3 text-sm font-semibold text-text-muted text-center rounded-full border border-border hover:border-accent hover:text-accent transition-all duration-200"
+                >
+                  Download CV
+                </a>
                 <a
                   href="#contact"
                   onClick={() => setMobileOpen(false)}

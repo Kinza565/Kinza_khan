@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { FiDownload } from "react-icons/fi";
 
 export default function About() {
   const statsRef = useRef(null);
@@ -69,6 +70,19 @@ export default function About() {
                 or a custom web application — I bring your vision to life with 
                 precision and creativity.
               </p>
+            </div>
+
+            <div className="mt-8">
+              <a
+                href="/Kinza Khan.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Kinza Khan CV.pdf"
+                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-full btn-accent hover:shadow-soft transition-all duration-200 hover:-translate-y-0.5"
+              >
+                <span>Download CV</span>
+                <FiDownload size={16} />
+              </a>
             </div>
 
             <div ref={statsRef} className="mt-10 grid grid-cols-3 gap-6">

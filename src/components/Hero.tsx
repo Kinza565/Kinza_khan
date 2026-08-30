@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4"
         >
           <a
             href="#projects"
@@ -65,6 +65,24 @@ export default function Hero() {
             className="px-8 py-4 text-base font-semibold text-secondary rounded-full border-2 border-secondary/20 hover:border-accent hover:bg-accent hover:text-white transition-all duration-300 hover:-translate-y-0.5"
           >
             Hire Me
+          </a>
+          <a
+            href="/Kinza Khan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group px-8 py-4 text-base font-semibold text-white rounded-full btn-accent hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <span className="flex items-center gap-2">
+              View CV
+              <LuExternalLink size={16} className="transition-transform group-hover:translate-x-1" />
+            </span>
+          </a>
+          <a
+            href="/Kinza Khan.pdf"
+            download="Kinza Khan.pdf"
+            className="px-8 py-4 text-base font-semibold text-secondary rounded-full border-2 border-secondary/20 hover:border-accent hover:bg-accent hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Download CV
           </a>
         </motion.div>
 

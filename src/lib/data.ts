@@ -73,6 +73,17 @@ export const skills = [
 export const projects = [
   {
     number: "01",
+    title: "Zaviar Trader",
+    category: "Business / Export Website",
+    description:
+      "Designed and developed a premium business website for Zaviar Trader, a Himalayan Pink Salt exporter, with a modern responsive interface focused on international buyers, product presentation, export quality, and business inquiries.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://zaviar-trader-ad.vercel.app/",
+    accent: "#0d9488",
+    image: "/images/zaviar-trader.png",
+  },
+  {
+    number: "02",
     title: "Rental Car Website",
     category: "Web Application",
     description:
@@ -81,9 +92,10 @@ export const projects = [
     liveUrl: "https://hackathone-template-7keenzah.vercel.app",
     githubUrl: "https://github.com/Kinza565/Hackathone-template-7-kinzah.git",
     accent: "#8b5cf6",
+    image: "/images/rental-car.png",
   },
   {
-    number: "02",
+    number: "03",
     title: "E-Commerce Website",
     category: "E-Commerce Platform",
     description:
@@ -92,9 +104,10 @@ export const projects = [
     liveUrl: "https://e-commerce-website-main-indol.vercel.app",
     githubUrl: "https://github.com/Kinza565/E-commerce-website.git",
     accent: "#ec4899",
+    image: "/images/ecommerce.png",
   },
   {
-    number: "03",
+    number: "04",
     title: "Blog Platform",
     category: "Content Platform",
     description:
@@ -103,9 +116,10 @@ export const projects = [
     liveUrl: "https://blog-with-kinza.vercel.app",
     githubUrl: "https://github.com/Kinza565/test-sanity.git",
     accent: "#f59e0b",
+    image: "/images/blog.png",
   },
   {
-    number: "04",
+    number: "05",
     title: "Physical AI Humanoid Robotics",
     category: "AI / Machine Learning",
     description:
@@ -115,6 +129,7 @@ export const projects = [
     githubUrl:
       "https://github.com/Kinza565/Physical-AI-Humanoid-Robotics.git",
     accent: "#10b981",
+    image: "/images/ai-robotics.png",
   },
 ];
 

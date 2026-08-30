@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { projects } from "@/lib/data";
 import { FiGithub, FiArrowUpRight } from "react-icons/fi";
+import Image from "next/image";
 
 function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -62,16 +63,26 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
             }}
           />
           <div className="relative h-full flex items-center justify-center p-10">
-            <motion.div
-              whileHover={{ scale: 1.08, rotate: 3 }}
-              className="w-24 h-24 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-2xl"
-              style={{
-                background: project.accent,
-                boxShadow: `0 20px 60px ${project.accent}30`,
-              }}
-            >
-              {project.number}
-            </motion.div>
+            {project.image ? (
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={600}
+                className="w-full h-full object-cover rounded-2xl shadow-2xl"
+              />
+            ) : (
+              <motion.div
+                whileHover={{ scale: 1.08, rotate: 3 }}
+                className="w-24 h-24 rounded-2xl flex items-center justify-center text-white text-4xl font-bold shadow-2xl"
+                style={{
+                  background: project.accent,
+                  boxShadow: `0 20px 60px ${project.accent}30`,
+                }}
+              >
+                {project.number}
+              </motion.div>
+            )}
           </div>
         </div>
 
@@ -103,34 +114,36 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
             ))}
           </div>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <motion.a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all btn-accent"
-              style={{
-                background: `linear-gradient(135deg, ${project.accent}, ${project.accent}dd)`,
-              }}
-            >
-              <FiArrowUpRight size={14} />
-              Live Demo
-            </motion.a>
+           <div className="mt-6 flex flex-wrap items-center gap-3">
+             <motion.a
+               href={project.liveUrl}
+               target="_blank"
+               rel="noopener noreferrer"
+               whileHover={{ scale: 1.05, y: -2 }}
+               whileTap={{ scale: 0.98 }}
+               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all btn-accent"
+               style={{
+                 background: `linear-gradient(135deg, ${project.accent}, ${project.accent}dd)`,
+               }}
+             >
+               <FiArrowUpRight size={14} />
+               Live Demo
+             </motion.a>
 
-            <motion.a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border-2 border-border/60 text-text-muted hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all"
-            >
-              <FiGithub size={14} />
-              GitHub
-            </motion.a>
-          </div>
+             {project.githubUrl && (
+               <motion.a
+                 href={project.githubUrl}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 whileHover={{ scale: 1.05, y: -2 }}
+                 whileTap={{ scale: 0.98 }}
+                 className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full border-2 border-border/60 text-text-muted hover:border-primary/40 hover:text-primary hover:bg-primary/5 transition-all"
+               >
+                 <FiGithub size={14} />
+                 GitHub
+               </motion.a>
+             )}
+           </div>
         </div>
       </div>
     </motion.div>
