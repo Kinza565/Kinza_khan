@@ -78,7 +78,7 @@ export const projects = [
     description:
       "Designed and developed a premium business website for Zaviar Trader, a Himalayan Pink Salt exporter, with a modern responsive interface focused on international buyers, product presentation, export quality, and business inquiries.",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://zaviar-trader-ad.vercel.app/",
+    liveUrl: "https://zavi-trader-3zcknfi7g-kinzahs-projects.vercel.app",
     accent: "#0d9488",
     image: "/images/zaviar-trader.png",
   },
