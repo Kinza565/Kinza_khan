@@ -89,7 +89,7 @@ export const projects = [
     description:
       "A full-featured car rental platform with real-time availability, booking management, and secure payment integration. Features seamless user experience with blazing-fast load times.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    liveUrl: "hackathone-template-7keenzah-eoqiu8r2j-kinzahs-projects.vercel.app",
+    liveUrl: "https://hackathone-template-7keenzah.vercel.app",
     githubUrl: "https://github.com/Kinza565/Hackathone-template-7-kinzah.git",
     accent: "#8b5cf6",
     image: "/images/rental-car.png",
@@ -140,7 +140,7 @@ export const projects = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
     liveUrl: "https://edu-portal-school-management-system.vercel.app",
     accent: "#3b82f6",
-    image: "/images/edu-portal.svg",
+    image: "/images/edu-portal.png",
   },
 ];
 
