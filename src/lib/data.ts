@@ -89,7 +89,7 @@ export const projects = [
     description:
       "A full-featured car rental platform with real-time availability, booking management, and secure payment integration. Features seamless user experience with blazing-fast load times.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
-    liveUrl: "https://hackathone-template-7keenzah.vercel.app",
+    liveUrl: "hackathone-template-7keenzah-eoqiu8r2j-kinzahs-projects.vercel.app",
     githubUrl: "https://github.com/Kinza565/Hackathone-template-7-kinzah.git",
     accent: "#8b5cf6",
     image: "/images/rental-car.png",
@@ -130,6 +130,17 @@ export const projects = [
       "https://github.com/Kinza565/Physical-AI-Humanoid-Robotics.git",
     accent: "#10b981",
     image: "/images/ai-robotics.png",
+  },
+  {
+    number: "06",
+    title: "Edu Portal - School Management System",
+    category: "Educational Platform",
+    description:
+      "A comprehensive school management system providing student enrollment, class scheduling, attendance tracking, grade management, and parent-teacher communication tools with a modern and intuitive interface.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
+    liveUrl: "https://edu-portal-school-management-system.vercel.app",
+    accent: "#3b82f6",
+    image: "/images/edu-portal.svg",
   },
 ];
 
