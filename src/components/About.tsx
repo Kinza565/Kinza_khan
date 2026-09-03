@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FiDownload } from "react-icons/fi";
+import Image from "next/image";
 
 export default function About() {
   const statsRef = useRef(null);
@@ -25,11 +26,17 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/10 p-1">
+             <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/10 p-1">
               <div className="w-full h-full rounded-3xl bg-surface flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-28 h-28 mx-auto rounded-full gradient-bg flex items-center justify-center text-white text-5xl font-bold shadow-soft-lg">
-                    K
+                  <div className="w-28 h-28 mx-auto rounded-full overflow-hidden gradient-bg flex items-center justify-center shadow-soft-lg">
+                    <Image
+                      src="/images/Kinza developer.png"
+                      alt="Kinza"
+                      width={100}
+                      height={100}
+                      className="w-full h-full object-cover rounded-full"
+                    />
                   </div>
                   <p className="mt-6 text-lg font-semibold text-text">Kinza</p>
                   <p className="text-sm text-text-muted">Web Developer</p>
