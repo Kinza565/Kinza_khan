@@ -16,50 +16,76 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 sm:py-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section id="about" className="relative py-28 sm:py-36 bg-dark overflow-hidden">
+      {/* Top divider */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      
+      {/* Section label */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 mb-16">
+        <div className="section-label">01 / About</div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Visual identity card */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="relative group"
           >
-             <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/10 p-1">
-              <div className="w-full h-full rounded-3xl bg-surface flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-28 h-28 mx-auto rounded-full overflow-hidden gradient-bg flex items-center justify-center shadow-soft-lg">
-                    <Image
-                      src="/images/Kinza developer.png"
-                      alt="Kinza"
-                      width={100}
-                      height={100}
-                      className="w-full h-full object-cover rounded-full"
-                    />
+            <div className="relative p-[1px] rounded-3xl bg-gradient-to-br from-primary/30 via-border to-accent/20">
+              <div className="relative rounded-3xl bg-card p-8 sm:p-10">
+                <div className="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/5">
+                  <Image
+                    src="/images/Kinza developer.png"
+                    alt="Kinza"
+                    fill
+                    className="object-cover rounded-2xl"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent rounded-2xl" />
+                </div>
+                
+                <div className="mt-6 flex items-end justify-between">
+                  <div>
+                    <h3 className="text-2xl font-heading font-bold text-text tracking-tight">Kinza</h3>
+                    <p className="text-sm text-text-muted mt-1 font-light tracking-wide">Web Developer</p>
                   </div>
-                  <p className="mt-6 text-lg font-semibold text-text">Kinza</p>
-                  <p className="text-sm text-text-muted">Web Developer</p>
+                  <div className="text-right">
+                    <p className="text-[10px] font-mono text-primary/60 tracking-wider uppercase">
+                      Portfolio
+                    </p>
+                    <p className="text-[10px] font-mono text-text-muted/40 tracking-wider mt-0.5">
+                      2026
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 rounded-2xl -z-10" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/20 rounded-2xl -z-10" />
+
+            {/* Decorative elements */}
+            <div className="absolute -top-3 -right-3 w-20 h-20 border border-primary/20 rounded-2xl -z-10" />
+            <div className="absolute -bottom-3 -left-3 w-20 h-20 border border-accent/20 rounded-2xl -z-10" />
           </motion.div>
 
+          {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
           >
-            <span className="text-sm font-semibold tracking-widest uppercase text-accent">
-              About Me
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-text">
-              Crafting Digital Experiences That <span className="gradient-text">Matter</span>
+            <div className="section-label mb-6">About Me</div>
+            
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-text tracking-tight leading-[1.15]">
+              Crafting Digital Experiences That{" "}
+              <span className="gradient-text">Matter</span>
             </h2>
-            <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
+            
+            <div className="mt-8 space-y-5 text-text-muted leading-[1.8] text-[15px]">
               <p>
                 I&apos;m a passionate web developer specializing in building modern, 
                 high-performance web applications. With expertise in <span className="text-text font-medium">Next.js</span>,{" "}
@@ -79,30 +105,39 @@ export default function About() {
               </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-10">
               <a
                 href="/Kinza Khan.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Kinza Khan CV.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white rounded-full btn-accent hover:shadow-soft transition-all duration-200 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2.5 px-6 py-3.5 text-[13px] font-semibold text-white rounded-full btn-accent hover:shadow-soft btn-sweep transition-all duration-400"
               >
-                <span>Download CV</span>
-                <FiDownload size={16} />
+                <span className="relative z-10 flex items-center gap-2.5">
+                  Download CV
+                  <FiDownload size={15} className="transition-transform duration-300 group-hover:translate-y-0.5" />
+                </span>
               </a>
             </div>
 
-            <div ref={statsRef} className="mt-10 grid grid-cols-3 gap-6">
+            <div ref={statsRef} className="mt-14 grid grid-cols-3 gap-8">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={statsInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="text-center"
+                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative"
                 >
-                  <div className="text-2xl font-bold gradient-text">{stat.number}</div>
-                  <div className="text-xs text-text-muted mt-1">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl font-heading font-bold gradient-text tracking-tight">
+                    {stat.number}
+                  </div>
+                  <div className="text-[11px] text-text-muted mt-2 tracking-wide uppercase font-medium">
+                    {stat.label}
+                  </div>
+                  {i < stats.length - 1 && (
+                    <div className="hidden sm:block absolute top-1/2 -right-4 w-[1px] h-8 bg-border -translate-y-1/2" />
+                  )}
                 </motion.div>
               ))}
             </div>

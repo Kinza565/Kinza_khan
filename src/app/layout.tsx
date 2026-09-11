@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
+import Script from "next/script";
+import { ThemeProvider } from "@/components/theme-provider";
+import SmoothScroll from "@/components/SmoothScroll";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -48,8 +52,18 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(() => { try { const t = localStorage.getItem('theme'); if (t === 'light') { document.documentElement.classList.add('light'); } else { document.documentElement.classList.add('dark'); } } catch (e) {} })();`}
+        </Script>
+      </head>
+      <body className="min-h-full flex flex-col">
+        <SmoothScroll>
+          <ThemeProvider>{children}</ThemeProvider>
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

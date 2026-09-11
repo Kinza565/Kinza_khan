@@ -3,8 +3,10 @@ import {
   FiLinkedin,
   FiMail,
   FiExternalLink,
+  FiBriefcase,
 } from "react-icons/fi";
 import { LuExternalLink } from "react-icons/lu";
+import { FaTwitter, FaPaperPlane } from "react-icons/fa";
 
 export const navLinks = [
   { name: "About", href: "#about" },
@@ -28,6 +30,29 @@ export const socialLinks = [
     name: "Email",
     href: "mailto:kinzasardar545@gmail.com",
     icon: FiMail,
+  },
+  {
+    name: "X",
+    href: "https://x.com/KinzaKhan183266",
+    icon: FaTwitter,
+  },
+  {
+    name: "Threads",
+    href: "https://www.threads.com/@falakhan54",
+    icon: FaPaperPlane,
+  },
+];
+
+export const freelanceLinks = [
+  {
+    name: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01a215d51a9b179a35",
+    icon: FiBriefcase,
+  },
+  {
+    name: "Fiverr",
+    href: "https://www.fiverr.com/sellers/kinz_code/edit",
+    icon: LuExternalLink,
   },
 ];
 

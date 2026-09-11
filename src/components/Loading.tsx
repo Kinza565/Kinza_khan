@@ -8,12 +8,12 @@ export default function Loading() {
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-dark grain"
-      exit={{ opacity: 0, scale: 1.05 }}
+      exit={{ opacity: 0, scale: 1.02 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-10">
         {/* Animated logo */}
-        <div className="flex items-center gap-1 overflow-hidden">
+        <div className="flex items-center gap-[2px] overflow-hidden">
           {letters.map((letter, i) => (
             <motion.span
               key={i}
@@ -24,7 +24,7 @@ export default function Loading() {
                 delay: 0.15 + i * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="text-5xl sm:text-6xl font-heading font-bold text-white inline-block"
+              className="text-5xl sm:text-6xl font-heading font-bold text-text inline-block"
             >
               {letter}
             </motion.span>
@@ -40,7 +40,7 @@ export default function Loading() {
         </div>
 
         {/* Animated line */}
-        <div className="relative w-48 h-[2px] overflow-hidden rounded-full">
+        <div className="relative w-48 h-[1px] overflow-hidden rounded-full">
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary"
             initial={{ x: "-100%" }}
@@ -59,7 +59,7 @@ export default function Loading() {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.5, 1] }}
           transition={{ delay: 1, duration: 1.5 }}
-          className="text-xs font-body tracking-[0.35em] uppercase text-text-muted"
+          className="text-[11px] font-body tracking-[0.35em] uppercase text-text-muted font-medium"
         >
           Crafting experience
         </motion.p>

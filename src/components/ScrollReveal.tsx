@@ -63,18 +63,16 @@ export function TextReveal({
   text,
   className = "",
   delay = 0,
-  as: Tag = "span",
 }: {
   text: string;
   className?: string;
   delay?: number;
-  as?: React.ElementType;
 }) {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <Tag ref={ref} className={className} aria-label={text}>
+    <div ref={ref} className={className} aria-label={text}>
       {text.split(" ").map((word, i) => (
         <span key={i} className="inline-block overflow-hidden">
           <motion.span
@@ -95,6 +93,6 @@ export function TextReveal({
           </motion.span>
         </span>
       ))}
-    </Tag>
+    </div>
   );
 }

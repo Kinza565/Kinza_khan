@@ -70,27 +70,48 @@ export default function CustomCursor() {
     <AnimatePresence>
       {isVisible && (
         <>
-          {/* Outer ring */}
+          {/* Cyan/Magenta glow aura */}
           <motion.div
-            className="fixed top-0 left-0 pointer-events-none z-[9998] mix-blend-difference hidden md:block"
+            className="fixed top-0 left-0 pointer-events-none z-[9997] hidden md:block"
             animate={{
-              x: position.x - 20,
-              y: position.y - 20,
-              scale: isHovering ? 1.8 : clicking ? 0.8 : 1,
-              opacity: 1,
+              x: position.x - 24,
+              y: position.y - 24,
+              scale: isHovering ? 2.2 : clicking ? 0.9 : 1,
+              opacity: isHovering ? 0.35 : clicking ? 0.15 : 0.18,
             }}
             initial={{ opacity: 0 }}
             exit={{ opacity: 0 }}
             transition={{
               x: { duration: 0.15, ease: "easeOut" },
               y: { duration: 0.15, ease: "easeOut" },
-              scale: { duration: 0.3, ease: "easeOut" },
-              opacity: { duration: 0.3 },
+              scale: { duration: 0.35, ease: "easeOut" },
+              opacity: { duration: 0.35 },
+            }}
+          >
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/40 to-fuchsia-500/40 blur-xl" />
+          </motion.div>
+
+          {/* Outer ring */}
+          <motion.div
+            className="fixed top-0 left-0 pointer-events-none z-[9998] mix-blend-difference hidden md:block"
+            animate={{
+              x: position.x - 16,
+              y: position.y - 16,
+              scale: isHovering ? 1.6 : clicking ? 0.8 : 1,
+              opacity: 1,
+            }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              x: { duration: 0.12, ease: "easeOut" },
+              y: { duration: 0.12, ease: "easeOut" },
+              scale: { duration: 0.25, ease: "easeOut" },
+              opacity: { duration: 0.25 },
             }}
           >
             <div
-              className={`w-10 h-10 rounded-full border transition-colors duration-300 ${
-                isHovering ? "border-white/60" : "border-primary/40"
+              className={`w-8 h-8 rounded-full border transition-colors duration-300 ${
+                isHovering ? "border-white/70" : "border-cyan-400/50"
               }`}
             />
           </motion.div>
@@ -99,21 +120,21 @@ export default function CustomCursor() {
           <motion.div
             className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
             animate={{
-              x: position.x - 4,
-              y: position.y - 4,
+              x: position.x - 3,
+              y: position.y - 3,
               scale: clicking ? 0.5 : 1,
             }}
             transition={{
-              x: { duration: 0.05 },
-              y: { duration: 0.05 },
-              scale: { duration: 0.2 },
+              x: { duration: 0.04 },
+              y: { duration: 0.04 },
+              scale: { duration: 0.15 },
             }}
           >
             <div
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                 isHovering
                   ? "bg-white scale-150"
-                  : "bg-primary"
+                  : "bg-cyan-400"
               }`}
             />
           </motion.div>

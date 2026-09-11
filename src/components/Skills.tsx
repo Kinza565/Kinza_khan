@@ -1,63 +1,82 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills } from "@/lib/data";
+
+const skillCategories = [
+  {
+    title: "Frontend & 3D",
+    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Three.js", "GSAP"],
+  },
+  {
+    title: "Backend & Database",
+    items: ["FastAPI", "Node.js", "Neon DB", "PostgreSQL", "REST APIs", "MCP Tools"],
+  },
+  {
+    title: "Tools & Workflow",
+    items: ["Git/GitHub", "Vercel", "Figma", "AI Coding CLI Tools"],
+  },
+  {
+    title: "Core Capabilities",
+    items: ["3D Landing Pages", "Responsive UI/UX", "Full-Stack Architecture"],
+  },
+];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-surface">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" className="relative py-28 sm:py-36 bg-[#0d0f17] overflow-hidden">
+      {/* Top divider */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+      
+      {/* Ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/5 via-primary/5 to-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <span className="text-sm font-semibold tracking-widest uppercase text-accent">
-            Skills
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-heading font-bold text-text">
-            Technologies I <span className="gradient-text">Work With</span>
+          {/* Glowing pill badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-6">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_#22d3ee]" />
+            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-cyan-400">
+              Tech Stack
+            </span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold tracking-tight text-text">
+            Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <p className="mt-4 text-text-muted max-w-xl mx-auto">
-            I use modern tools and frameworks to build fast, reliable, and beautiful web applications.
-          </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+        {/* 2x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 30 }}
+              key={category.title}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="p-6 rounded-2xl card hover:border-primary/30 hover:shadow-soft transition-all duration-300 group"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="group relative p-6 sm:p-8 rounded-2xl bg-slate-900/40 backdrop-blur-xl border border-white/10 transition-all duration-500 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.25)]"
             >
-              <div className="flex items-center gap-4">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-lg"
-                  style={{ background: skill.color }}
-                >
-                  {skill.name.charAt(0)}
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-text">{skill.name}</h3>
-                  <p className="text-xs text-text-muted">{skill.level}%</p>
-                </div>
-              </div>
-              <p className="mt-3 text-sm text-text-muted">{skill.description}</p>
-              <div className="mt-4 h-1.5 rounded-full bg-border/40 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                  className="h-full rounded-full"
-                  style={{ background: skill.color }}
-                />
+              <h3 className="text-lg font-heading font-bold text-text tracking-tight mb-5 group-hover:text-cyan-400 transition-colors duration-300">
+                {category.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {category.items.map((item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 border border-white/10 text-text-muted group-hover:text-text group-hover:border-white/20 transition-all duration-300"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </motion.div>
           ))}

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Loading from "@/components/Loading";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/FloatingNavbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
@@ -12,6 +12,7 @@ import WhyChooseMe from "@/components/WhyChooseMe";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import AIAssistantWrapper from "@/components/AIAssistantWrapper";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -37,7 +38,7 @@ export default function Home() {
           className="grain"
         >
           <Navbar />
-          <main className="flex-1">
+          <main>
             <Hero />
             <About />
             <Skills />
@@ -46,6 +47,7 @@ export default function Home() {
             <Contact />
           </main>
           <Footer />
+          <AIAssistantWrapper />
         </motion.div>
       )}
     </>
